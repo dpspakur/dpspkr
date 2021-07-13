@@ -1,0 +1,11 @@
+<%- include('partials/admin_header')%>
+<div>
+    <h2 style="padding: 2% 0;">Rjection Message</h2>
+    <h3 style="padding: 2% 3%;">Rejection form of <%= student.name||student.eleven.name%></h3>
+    <form style="padding: 2% 3%;" action="" method="post">
+    <label  for="msg">Rejection Reason</label>
+    <textarea name="msg" id="msg" cols="30" rows="5"></textarea>
+    <button type="submit" >Reject</button>
+    </form>
+    
+</div>

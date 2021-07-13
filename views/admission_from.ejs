@@ -1,0 +1,345 @@
+ 
+    <% if (user && user.admin != 1 && user.approved != true && user.submit!=true){ %>
+    <%- include('partials/header')%>
+    <%- include ("partials/messages") %>
+    <style>
+      #eleven{
+        display: none;
+      }
+    </style>
+
+    <div class="ad_from">
+      <h2>DPS Addmission Form</h2>
+      <h3>Please fill the form below to continue...</h3>
+      <h2 style="color: red;">please write N/A where you dont need to answer</h1>
+      <form method="post"  encType="multipart/form-data">
+        <label for="dclass">Choose category</label>
+        
+        <select id="dclass" name="dclass" onchange="mynton()">
+          <option value="nton" >Nursery to Nine</option>
+          <option value="eleven">class XI</option>
+           
+       </select><br>
+       <!-- <p onclick="mynton()">click</p> -->
+       <div id="nine" class="nurseryToNine" >
+        <label for="class">Class to be applied</label>
+        <input type="text" value="<%= typeof ad_class != 'undefined' ? ad_class : '' %>" id="Class" name="Class"><br>
+        <label for="fullname">Full Name</label>
+        <input type="text" value="<%= typeof fullname != 'undefined' ? fullname : '' %>" id="fullname" name="fullname"><br>
+        
+        <label for="dob">Date of Birth (In words and in Figures)</label>
+        <input type="date"  id="dob" name="dob" max="2019-12-31"><br>
+        <label for="dob_day">Day</label>
+        <input type="text" value="<%= typeof dob_day != 'undefined' ? dob_day : '' %>"id="dob_day" name="dob_day">
+        <label for="dob_Month">Month</label>
+        <input type="text" value="<%= typeof dob_Month != 'undefined' ? dob_Month : '' %>" id="dob_Month" name="dob_Month">
+        <label for="dob_year">year</label>
+        <input type="text" value="<%= typeof dob_year != 'undefined' ? dob_year : '' %>" id="dob_year" name="dob_year"><br>
+        <label for="nationality">Nationality</label>
+        <input type="text" value="<%= typeof nationality != 'undefined' ? nationality : '' %>" id="nationality" name="nationality">
+        <label for="Religion">Religion</label>
+        <input type="text" value="<%= typeof Religion != 'undefined' ? Religion : '' %>" id="Religion" name="Religion">
+        <label for="gender">gender</label>
+
+        <select id="gender" name="gender">
+           <option value="male">Male</option>
+           <option value="female">Female</option>
+           <option value="others">Others</option>
+            
+        </select><br>
+        <label for="fatherName">Father's full name</label>
+        <input type="text" value="<%= typeof fatherName != 'undefined' ? fatherName : '' %>" id="fatherName" name="fatherName"><br>
+        <label for="father_Occupation">Occupation</label>
+        <input type="text" value="<%= typeof father_Occupation != 'undefined' ? father_Occupation : '' %>" id="father_Occupation" name="father_Occupation">
+        <label for="father_Designation">Designation</label>
+        <input type="text" value="<%= typeof father_Designation != 'undefined' ? father_Designation: '' %>" id="father_Designation" name="father_Designation">
+        
+        <label for="father_Annual_Income">Annual Income</label>
+        <input type="text" value="<%= typeof father_Annual_Income != 'undefined' ? father_Annual_Income: '' %>" id="father_Annual_Income" name="father_Annual_Income"><br>
+        <label for="father_work">Organisation’s Name & Address</label>
+        <input type="text" value="<%= typeof father_work != 'undefined' ? father_work: '' %>" id="father_work" name="father_work"><br>
+        <label for="father_qual">Academic Qualification </label>
+        <input type="text" value="<%= typeof father_qual != 'undefined' ? father_qual : '' %>" id="father_qual" name="father_qual"><br>
+        <label for="father_contact">Contact no</label>
+        <input type="text" value="<%= typeof father_contact != 'undefined' ? father_contact : '' %>" id="father_contact" name="father_contact"><br>
+        <label for="motherName">Mother'full name</label>
+        <input type="text" value="<%= typeof motherName != 'undefined' ? motherName : '' %>" id="motherName" name="motherName"><br>
+        <label for="mother_Occupation">Occupation</label>
+        <input type="text" value="<%= typeof mother_Occupation != 'undefined' ? mother_Occupation : '' %>" id="mother_Occupation" name="mother_Occupation">
+        <label for="mother_Designation">Designation</label>
+        <input type="text" value="<%= typeof mother_Designation != 'undefined' ? mother_Designation: '' %>" id="mother_Designation" name="mother_Designation">
+        <label for="mother_Annual_Income">Annual Income</label>
+        <input type="text" value="<%= typeof mother_Annual_Income != 'undefined' ? mother_Annual_Income : '' %>" id="mother_Annual_Income" name="mother_Annual_Income"><br>
+        <label for="mother_work">Organisation’s Name & Address</label>
+        <input type="text" value="<%= typeof mother_work != 'undefined' ? mother_work : '' %>" id="mother_work" name="mother_work"><br>
+        <label for="mother_qual">Academic Qualification </label>
+        <input type="text" value="<%= typeof mother_qual != 'undefined' ? mother_qual : '' %>" id="mother_qual" name="mother_qual"><br>
+        <label for="mother_contact">Contact no</label>
+        <input type="text" value="<%= typeof mother_contact != 'undefined' ? mother_contact : '' %>" id="mother_contact" name="mother_contact"><br>
+        <label for="home">Home Town</label>
+        <input type="text" value="<%= typeof home != 'undefined' ? home : '' %>" id="home" name="home">
+        <label for="state">State</label>
+        <input type="text" value="<%= typeof state != 'undefined' ? state : '' %>" id="state" name="state">
+        <label for="country">Country</label>
+        <input type="text" value="<%= typeof fatherName != 'undefined' ? fatherName : '' %>" id="country" name="country"><br>
+        <label for="present_address">Adress(present)</label>
+        <input type="text"  value="<%= typeof fatherName != 'undefined' ? fatherName : '' %>"id="present_address" name="present_address"><br>
+        <label for="permanent_address">Adress(permanent)</label>
+        <input type="text" value="<%= typeof fatherName != 'undefined' ? fatherName : '' %>" id="permanent_address" name="permanent_address"><br>
+        <label for="others">Details of any brother of sister studying in DPS</label><br>
+        <label for="one_name">Name</label>
+        <input type="text" value="<%= typeof one_name != 'undefined' ? one_name : '' %>" id="one_name" name="one_name">
+        <label for="one_admsn">Admission No.</label>
+        <input type="text" value="<%= typeof one_admsn != 'undefined' ? one_admsn : '' %>" id="one_admsn" name="one_admsn">
+        <label for="one_class">Class</label>
+        <input type="text" value="<%= typeof one_class != 'undefined' ? one_class: '' %>" id="one_class" name="one_class">
+        <label for="one_Sec">Sec</label>
+        <input type="text" value="<%= typeof one_Sec != 'undefined' ? one_Sec : '' %>" id="one_Sec" name="one_Sec"><br>
+        <label for="two_name">Name</label>
+        <input type="text" value="<%= typeof two_name != 'undefined' ? two_name : '' %>" id="two_name" name="two_name">
+        <label for="two_admsn">Admission No.</label>
+        <input type="text" value="<%= typeof two_admsn != 'undefined' ? two_admsn : '' %>" id="two_admsn" name="two_admsn">
+        <label for="two_class">Class</label>
+        <input type="text" value="<%= typeof two_class != 'undefined' ? two_class: '' %>" id="two_class" name="two_class">
+        <label for="two_Sec">Sec</label>
+        <input type="text" value="<%= typeof two_Sec != 'undefined' ? two_Sec : '' %>" id="two_Sec" name="two_Sec"><br>
+        <label for="info">Any other info</label>
+        <input type="text" value="<%= typeof info != 'undefined' ? info : '' %>" id="info" name="info"><br>
+        <label for="prev_school"> Name of previous school</label>
+        <input type="text" value="<%= typeof prev_school != 'undefined' ? prev_school : '' %>" id="prev_school" name="prev_school"><br>
+      
+        <label for="prev_class"> Class in which he / she was studying in the last school.</label>
+        <input type="text" value="<%= typeof prev_class != 'undefined' ? prev_class : '' %>" id="prev_class" name="prev_class"><br>
+        <label for="prev_position">Position obtained in the last examination in the previous school</label>
+        <input type="text" value="<%= typeof prev_position != 'undefined' ? prev_position: '' %>" id="prev_position" name="prev_position"><br>
+        <label for="prev_medium">  Medium of instruction in previous school (English / Hindi).</label>
+        <input type="text" value="<%= typeof prev_medium != 'undefined' ? prev_medium : '' %>" id="prev_medium" name="prev_medium"><br>
+        <label for="skills"> Proficiency in games / co-curricular / outstanding achievements (if any) </label>
+        <input type="text" value="<%= typeof skills != 'undefined' ? skills : '' %>" id="skills" name="skills"><br>
+        <label for="skills_certificate">Certifcate may be enclosed for proficiency in Games / Co-curricular / Outstanding Achievements (if any)</label>
+        <input type="text" value="<%= typeof skills_certificate != 'undefined' ? skills_certificate : '' %>" id="skills_certificate" name="skills_certificate"><br>
+        <label for="prev_result">Details of marks obtained in the last annual exam (in %)</label>
+        <input type="text" value="<%= typeof prev_result != 'undefined' ? prev_result : '' %>" id="prev_result" name="prev_result"><br>
+        <div class="documents">
+          <h2>Upload the required documents here</h2>
+           
+              <label for="image">Your passport size photo</label>
+              <input type="file"   id="image" name="image"><br>
+              <label for="image1">Mother's Signature</label>
+              <input type="file"   id="image" name="image1"><br>
+              <label for="image2">Father's Signature</label>
+              <input type="file"   id="image" name="image2"><br>
+      </div>
+       </div>
+       <div class="eleven" id="eleven">
+         <h3 style="padding-top: 3%;">General information of student</h3><br>
+         <label for="dname">Full Name :</label>
+         <input type="text" id="dname" name="dname"><br>
+         <label for="dmob">Mobile number :</label>
+         <input type="text" id="dmob" name="dmob"><br>
+         <label for="ddob">Date of birth :</label>
+         <input type="date"  id="ddob" name="ddob" max="2019-12-31"><br>
+         <label for="dcategory"> Category (SC/ST/OBC/GEN) :</label>
+         <input type="text" id="dcategory" name="dcategory"><br>
+         <h3 style="padding-top: 3%;">details of previous study</h3>
+         <label for="dyop">Year of appearing board exam :</label>
+         <input type="text" id="dyop" name="dyop">
+         <label for="dschool">School name:</label><br>
+         <input type="text" id="dschool" name="dschool"><br>
+         <label for="dnob">Name of board(ICSE/CBSE/OTHER) :</label>
+         <input type="text" id="dnob" name="dnob"><br>
+         <label for="dagg">Marks secured in half yearly class X exam :(i) Aggregate(in %) :</label>
+         <input type="text" id="dagg" name="dagg"><br>
+         <label for="dmaths">(ii) Maths (in % if science student) :</label>
+         <input type="text" id="dmaths" name="dmaths"><br>
+         <label for="dscience">(ii) Science(in % if science student):</label>
+         <input type="text" id="dscience" name="dscience"><br>
+         <label for="dceng">(iii)English(in % if commerce student) :</label>
+         <input type="text" id="dceng" name="dceng"><br>
+          
+         <label for="dcmaths">(iii)Maths(in % if commerce student) :</label>
+         <input type="text" id="dcmaths" name="dcmaths"><br>
+         <h3 style="padding-top: 3%;">Stream applying for</h3>
+         <label for="dstream">stream(science / commerce) :</label>
+         <input type="text" id="dstream" name="dstream"><br>
+         <h3>write 6 of the subjects offered</h3>
+         <label for="done"> for science 1. :</label>
+         <input type="text" id="done" name="done"><br>
+         <label for="dtwo">2. :</label>
+         <input type="text" id="dtwo" name="dtwo"><br>
+         <label for="dthree">3. :</label>
+         <input type="text" id="dthree" name="dthree"><br>
+         <label for="dfour">4. :</label>
+         <input type="text" id="dfour" name="dfour"><br>
+         <label for="dfive">5. :</label>
+         <input type="text" id="dfive" name="dfive"><br>
+         <label for="dsix">1. :</label>
+         <input type="text" id="dsix" name="dsix"><br>
+         <label for="dcone"> for commerce 1. :</label>
+         <input type="text" id="dcone" name="dcone"><br>
+         <label for="dtwo">2. :</label>
+         <input type="text" id="dctwo" name="dctwo"><br>
+         <label for="dcthree">3. :</label>
+         <input type="text" id="dcthree" name="dcthree"><br>
+         <label for="dcfour">4. :</label>
+         <input type="text" id="dcfour" name="dcfour"><br>
+         <label for="dcfive">5. :</label>
+         <input type="text" id="dcfive" name="dcfive"><br>
+         <label for="dcsix">1. :</label>
+         <input type="text" id="dcsix" name="dcsix"><br>
+         <h3 style="padding-top: 3%;">parents/ guardain information</h3>
+         <label for="dfather">Father's name:</label>
+         <input type="text" id="dfather" name="dfather"><br>
+         <label for="dmother">Mother's name :</label>
+         <input type="text" id="dmother" name="dmother"><br>
+         <label for="demail"> email :</label>
+         <input type="text" id="demail" name="demail"><br>
+         <label for="doccupation">Occupation:</label>
+         <input type="text" id="doccupation" name="doccupation"><br>
+         <label for="dphno">Phone number:</label>
+         <input type="text" id="dphno" name="dphno"><br>
+         <label for="dadress">RESIDENTIAL ADDRESS</label>
+         <input type="text" id="dadress" name="dadress"><br>
+         <div class="documents">
+          <h2>Upload the required documents here</h2>
+           
+              <label for="dimage">Your passport size photo</label>
+              <input type="file"   id="dimage" name="dimage"><br>
+              <label for="dimage1">Father's Signature</label>
+              <input type="file"   id="dimage1" name="dimage1"><br>
+      </div>
+       </div>
+       
+        <button type="submit" value="submit" class="btn_trans_green">Submit</button>
+
+      </form>
+    </div>
+    <div style="text-align: center;">
+      <a class="btn btn_trans_green  " href="/auth/logout">Logout</a>
+    </div>
+    
+    <script>
+      function mynton(){
+       var x = document.getElementById("dclass").value;
+       if(x=="eleven"){
+         document.getElementById("eleven").style.display="block";
+         document.getElementById("nine").style.display="none"
+       }else{
+        document.getElementById("eleven").style.display="none";
+        document.getElementById("nine").style.display="block";
+       }
+      }
+    </script>
+   
+      <%- include('partials/footer') %>
+      <% }; %>
+      <% if (user && user.admin != 1 && user.approved != true && user.submit==true){ %>
+        <%- include('partials/header')%>
+        <div class="thankyou_message" style="text-align: center; padding: 5% 3%;line-height: 40px;" >
+          <h2> Thank you!! <br> your form is under review you will get a confirmation email once your form is approved by the school </h2>
+        </div>
+        <div style="text-align: center;">
+          <a class="btn btn_trans_green  " href="/auth/logout">Logout</a>
+        </div>
+        <%- include('partials/footer') %>
+      <% }; %>
+      <% if (user && user.admin != 1 && user.approved == true) { %>
+        <%- include('partials/header')%>
+        <div class="student_form_detail">
+          <% if(student.dclass=='nton'){ %>
+            <p>1.Child’s Name in full  : <%= student.name %>   <br>
+                2.Admission sought to : Class   <%= student.ad_class %> <br>
+                3. Date of Birth (In words and in Figures):Class   <%= student.dob %> <br>
+                Day :  <%= student.dob_day %>   Month :  <%= student.dob_month %>  Year :  <%= student.dob_year %> <br>
+                4. Nationality of Child:  <%= student.nationality %> Religion :  <%= student.Religion %> Gender (Male / Female):  <%= student.Gender %> <br>
+                5. Father’s Name :  <%= student.father.name %> <br>
+                Occupation :   <%=student.father.Occupation  %> Designation :   <%= student.father.Designation %>  Annual Income :   <%= student.father.annualIncome %> <br>
+                Organisation’s Name & Address   :<%= student.father.organisationsNameAndAddress %> <br>
+                Academic Qualification :  <%= student.father.academicQualification  %> <br>
+                Phone No. (office) :  <%= student.father.PhoneNo  %>  Residence :  <%= student.father.PhoneNo %> <br>
+                6. Mother’s Name :  <%= student.mother.name %> <br>
+                Occupation :  <%= student.mother.Occupation  %>    Designation :  <%= student.mother.Designation %>  Annual Income :  <%= student.mother.annualIncome %> <br>
+                Organisation’s Name & Address:  <%= student.mother.organisationsNameAndAddress %> <br>
+                Academic Qualification :   <%= student.mother.academicQualification  %> <br>
+                Phone No. (office) :   <%= student.mother.PhoneNo  %> Residence :  <%= student.mother.PhoneNo  %> <br>
+                8. (A) Home Town :  <%= student.address1.town %>   State  :  <%= student.address1.state %>  Country:  <%= student.address1.Country %> <br>
+                (B) Address : (Permanent)   <%= student.address2.permanent %> <br>
+                Address : (Present)    <%= student.address2.present %>  <br>
+                9. Details of any brother of sister studying in DPS <br>
+                Name of the Child :  <%= student.sibling.one.name %>   Admn. NO. :  <%= student.sibling.one.admsnNo %>   Class / Sec :  <%= student.sibling.one.class %> <br>
+                Name of the Child :  <%= student.sibling.two.name %>  Admn. NO. :  <%= student.sibling.two.admsnNo %>   Class / Sec :  <%= student.sibling.two.class %> <br>
+                Any other Information <br>
+                Staff Child (Mention the name of the parent(s) working at DPS)  <br>
+                :  <%= student.Any_other_info %> <br>
+                DOCUMENTS REQUIRED : <br>
+                1. At the time of admission, an attested copy of Municipal Birth Certicate or a Certicate from the School last attended. <br>
+                2. Four Passport size Photographs of Student & two photos each of Father, Mother & Guardian will be submitted for school
+                records. <br>
+                3. Transfer Certificate in original from the last school. <br>
+                    a) Name of previous school :<%= student.prev_school %> <br>
+                    b) Class in which he / she was studying in the last school :  <%= student.prev_class %> <br>
+                    c) Position obtained in the last examination in the previous school :  <%= student.prev_result %> <br>
+                    d) Medium of instruction in previous school (English / Hindi)  :  <%= student.prev_medium %> <br>
+                    e) Proficiency in games / co-curricular / outstanding achievements (if any) :  <%= student.skills %> <br>
+                    f) Certificate may be enclosed for proficiency in Games / Co-curricular / Outstanding Achievements (if any) <br>
+                    g) Details of marks obtained in the last annual exam (in %) <br>
+                   
+            </p>
+            <h2>DOCUMENTS</h2>
+            <img src="/files/forms/<%=student.email%>/<%= student.studentPic%>" alt="" style="height: 100px; width: auto;"><br>
+            
+        <%}else{%>
+            <p> <h3 style="padding-top: 3%;">General information of student</h3><br>
+                Full Name :<%=student.eleven.name%><br>
+                Mobile number :<%=student.eleven.mob%><br>
+                Date of birth :<%=student.eleven.dob%><br>
+                Category (SC/ST/OBC/GEN) :<%=student.eleven.category%><br>
+                <h3 style="padding-top: 3%;">details of previous study</h3><br>
+                Year of appearing board exam :<%=student.eleven.yop%> <br>
+                School name:<%=student.eleven.school%><br>
+                Name of board(ICSE/CBSE/OTHER) :<%=student.eleven.nob%><br>
+                Marks secured in half yearly class X exam :(i) Aggregate(in %) :<%=student.eleven.agg%><br>
+                (ii) Maths (in % if science student) :<%=student.eleven.maths%><br>
+                (ii) Science(in % if science student):<%=student.eleven.science%><br>
+                (iii)English(in % if commerce student) :<%=student.eleven.ceng%><br>
+                 
+                (iii)Maths(in % if commerce student) :<%=student.eleven.cmaths%><br>
+                <h3 style="padding-top: 3%;">Stream applying for</h3><br>
+                stream(science / commerce) :<%=student.eleven.commerce%><br>
+                <h3>write 6 of the subjects offered</h3><br>
+                 for science 1. :<%=student.eleven.one%><br>
+                2. :<%=student.eleven.two%><br>
+                3. :<%=student.eleven.three%><br>
+                4. :<%=student.eleven.four%><br>
+                5. :<%=student.eleven.five%><br>
+                1. :<%=student.eleven.six%><br>
+                 for commerce 1. :<%=student.eleven.cone%><br>
+                2. :<%=student.eleven.ctwo%><br>
+                3. :<%=student.eleven.cthree%><br>
+                4. :<%=student.eleven.cfour%><br>
+                5. :<%=student.eleven.cfive%><br>
+                6. :<%=student.eleven.csix%><br>
+                <h3 style="padding-top: 3%;">parents/ guardain information</h3><br>
+                Father's name:<%=student.eleven.father%><br>
+                Mother's name :<%=student.eleven.mother%><br>
+                email :<%=student.eleven.email%><br>
+                Occupation:<%=student.eleven.Occupation%><br>
+                Phone number:<%=student.eleven.phno%><br>
+                RESIDENTIAL ADDRESS:  <%=student.eleven.adress%><br></p>
+        <%}%>
+          <button class="btn_trans_green" > <a href="/admission_fees">Proceed to pay</a></button>
+          
+           
+      </div>
+      <div style="text-align: center;">
+        <a class="btn btn_trans_green  " href="/auth/logout">Logout</a>
+      </div>
+      <%- include('partials/footer') %>
+      <% }; %>
+      <% if (user && user.admin == 1) { %>
+        <%- include('partials/admin_header')%>
+        
+        <% }; %>
+        
+</body>
+</html>

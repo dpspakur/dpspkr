@@ -1,0 +1,19 @@
+<%- include('partials/admin_header')%>
+ <h2 style="padding: 2% 0;">Admisson Fee Payment list</h2>
+ <ul style="padding:5% 2%">
+    <% fees.forEach(function(fee){%>
+        <li><ul style="padding: 0 2%;">
+            <li>Email:<%=fee.email%> </li>
+            <li>Order id : <%=fee.order%></li>
+           <% if(fee.payment!=true){%>
+            <li><a style="text-decoration: none;color: green;" href="/paymentapprove/<%=fee.email%>">Click to Approve</a></li>
+           <% }else{%>
+            <li>Approved</li>
+           <%} %>
+           
+        </ul> </li>
+        <%})%>
+ </ul>
+
+</body>
+</html>

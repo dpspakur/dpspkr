@@ -1,0 +1,27 @@
+<%- include('partials/header')%>
+<div class="payment">
+    <%- include ("partials/messages") %>
+    <div class="payment_upper">
+        <h1>online Payment </h1>
+        <h2>For upi payment only follow the instruction and proceed</h2>
+        <ul><li>Sent money on the upi .....</li>
+            <li>Put the order id in the form</li>
+            <li>wait for confirmation of mail</li></ul>
+    </div>
+    <form action="" method="post">
+        <label for="name">Student name</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="class">Class</label>
+        <input type="text" id="class" name="class"><br>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="ad_no">Admission Number</label>
+        <input type="ad_no" id="ad_no" name="ad_no"><br>
+        <label for="order_id">Order id</label>
+        <input type="text" id="order_id" name="order_id"><br>
+        
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+<%- include('partials/footer') %>

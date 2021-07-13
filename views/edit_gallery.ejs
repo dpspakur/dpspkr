@@ -1,0 +1,33 @@
+<%- include('partials/admin_header')%>
+<style>
+    a{
+        text-decoration: none;
+        color: #145A32;
+        font-size: 150%;
+    }
+</style>
+<ul style="padding: 2% 3%;">
+    <li><a href="/admingallery/add_category"> Add Category</a></li>
+    <li><a href="/admingallery/add_pic"> Add picture</a></li>
+</ul>
+<h2 style="padding: 2% 0;">Gallery Picture List </h2>
+<ul style="padding: 2% 3%;list-style: none;">
+   <% pics.forEach(function(pic){ %>
+        <li>
+             <img style="height: 300px;width: auto; " src="/files/gallery/<%=pic.category%>/<%=pic.picname%>" alt=""><br>
+             <a style="padding: 1% 2%;" href="/admingallery/deletepic/<%=pic.id%>">delete <%=pic.picname%></a>
+        </li>
+    <%})%>
+</ul>
+<h2 style="padding: 2% 0;">Gallery Category List</h2>
+<ul style="padding: 2% 3%; list-style: none;">
+    <%categories.forEach(function(category){ %>
+        <li>
+            <img style="height: 300px;width: auto;" src="/files/gallery/<%=category.title%>/<%=category.picname%>" alt=""><br>
+            <a href="/admingallery/deletecategory/<%=category.id%>">delete <%=category.title%></a>
+       </li>
+    <%})%>
+</ul>
+
+</body>
+</html>

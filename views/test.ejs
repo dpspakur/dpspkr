@@ -1,0 +1,10 @@
+<%- include('partials/header')%>
+<div class="full_notice">
+    <ul>
+        <% for(let i=(notices.length-1);i>=0;i--){ %>
+        <li><a href="/notice/<%=notices[i].title%>"> <%= notices[i].name %></a></li>
+        <% }; %>
+    </ul>
+</div>
+    
+<%- include('partials/footer') %>

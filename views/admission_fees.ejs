@@ -1,0 +1,27 @@
+<%- include('partials/header')%>
+<% if(user.paymentsubmit!=true){%>
+<div class="payment">
+    <div class="payment_upper">
+        <h1>online Payment </h1>
+        <h2>For upi payment only follow the instruction and proceed</h2>
+        <ul><li>Sent money on the upi .....</li>
+            <li>Put the order id in the form</li>
+            <li>wait for confirmation of mail</li></ul>
+    </div>
+    <form action="" method="post">
+        <label for="id">Order id</label>
+        <input type="text" id="id" name="id"><br>
+         
+        
+        <input type="submit" value="submit">
+    </form>
+</div>
+<% }%>
+<% if(user.paymentsubmit==true && user.paymentverified !=true){%>
+<h2 style="padding: 5% 2%;"> Your payment is being verified you will get a confirmation mail if transaction is sucessful </h2>
+<%}%>
+<% if(user.paymentsubmit==true && user.paymentverified ==true){%>
+    <h2 style="padding: 5% 2%;"> Your payment is sucessfull</h2>
+<% } %>
+
+<%- include('partials/footer') %>

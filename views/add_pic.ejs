@@ -1,0 +1,18 @@
+<%- include('partials/admin_header')%>
+ <h2 style="padding: 2% 0;">Add Gallery Category</h2>
+<form style="padding: 2% 4%;" action="" method="post" encType="multipart/form-data">
+<label for="title" >Category</label>
+<select id="category" name="category">
+    <% categories.forEach(function(category){ %>
+        <option value="<%=category.title%>" ><%=category.title%></option>
+    <%})%>
+    
+     
+     
+ </select><br>
+<label for="pic" >Upload pic </label>
+<input style="margin: 2% 0;" type="file" name="pic" id="pic"><br>
+<button type="submit">Add</button>
+</form>
+</body>
+</html>

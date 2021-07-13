@@ -1,0 +1,39 @@
+<%- include('partials/header')%>
+<body>
+    <%- include ("partials/messages") %>
+    <div class="signup">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            
+                            <input  type="text" placeholder="Name" name="name">
+                        </div>
+                        <div class="input-group">
+                            <input   type="text" placeholder="email" name="email">
+                            
+                        </div>
+                        
+                        
+                        <div class="input-group">
+                            <input  type="password" placeholder="password" name="password">
+                        </div>
+                        <div class="input-group">
+                            <input  type="password" placeholder="password2" name="password2">
+                        </div>
+                        <div class="p-t-10">
+                            <button type="submit" value="submit" class="btn_trans_green">
+                                Sign up
+                            </button>
+                           
+                        </div>
+                        <a href="/auth/login">Already Applied! Click here to continue..</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>

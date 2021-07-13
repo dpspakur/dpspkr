@@ -1,0 +1,18 @@
+<%- include('partials/header')%>
+<div class="row">
+   <% pics.forEach(function(pic){ %>
+    <div class="column">
+        <img src="/files/gallery/<%=pic.category%>/<%=pic.picname%>" alt="Nature" style="width:100%" onclick="mmyFunction(this);">
+         
+      </div>
+    <%})%>
+    
+     
+  </div>
+  
+  <div class="container" style="text-align: center;">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:50%">
+    <div id="imgtext"></div>
+  </div>
+<%- include('partials/footer') %>

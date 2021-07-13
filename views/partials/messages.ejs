@@ -1,0 +1,20 @@
+<% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
+    <div class="message">
+        <p> <%= error.msg %></p>
+    </div>
+    <% }); %><% } %>
+    
+ <% if(success_msg != ''){ %>
+    <div style="background-color: rgba(0, 128, 0, 0.685);color: honeydew;">
+        <p style="padding: 1% 1%;"> <%= success_msg %></p>
+    </div>
+<% } %> <% if(error_msg != ''){ %>
+    <div class="message">
+        <p> <%= error_msg %></p>
+    </div>
+<% } %>  
+<% if(error != ''){ %>
+    <div class="message">
+        <p> <%= error %></p>
+    </div>
+    <% } %>

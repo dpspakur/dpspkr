@@ -1,0 +1,27 @@
+<%- include('partials/header')%>
+<div class="photo_gallery_main">
+    <h2>Gallery Vault</h2>
+    <p style="padding: 2% 1%;"> We promise to deliver quality in all aspects. Capture them and kep them.</p>
+    <div class="imgs_main row">
+        
+            <div class="photo" style="width: 30%;" >
+                <a href="/sports" style="width: fit-content;"><img style="width: 100%;height: auto;" src="img/WhatsApp-Image-2018-01-08-at-12.49.21-PM.jpeg" alt=""><h4>sports Day</h4> </a> 
+                  
+            </div>
+            
+         
+         
+            <%categories.forEach(function(category){%>
+                <div class="photo" style="width: 30%; margin: 3% 0;">
+                    <a style="width: fit-content;text-decoration: none; color: #fff;" href="/gallery/<%=category.title%>">
+                        <img  style="width: 100%;height: auto;" src="files/gallery/<%=category.title%>/<%=category.picname%>" alt=""> <h4><%=category.title%></h4></a>
+                </div>
+                
+            <%})%>
+           
+         
+      
+    </div>
+</div>
+    
+ <%- include('partials/footer') %>

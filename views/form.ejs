@@ -1,0 +1,98 @@
+<%- include('partials/admin_header')%>
+<div class="student_form_detail">
+    <% if(student.dclass=='nton'){ %>
+        <p>1.Child’s Name in full  : <%= student.name %>   <br>
+            2.Admission sought to : Class   <%= student.ad_class %> <br>
+            3. Date of Birth (In words and in Figures):Class   <%= student.dob %> <br>
+            Day :  <%= student.dob_day %>   Month :  <%= student.dob_month %>  Year :  <%= student.dob_year %> <br>
+            4. Nationality of Child:  <%= student.nationality %> Religion :  <%= student.Religion %> Gender (Male / Female):  <%= student.Gender %> <br>
+            5. Father’s Name :  <%= student.father.name %> <br>
+            Occupation :   <%=student.father.Occupation  %> Designation :   <%= student.father.Designation %>  Annual Income :   <%= student.father.annualIncome %> <br>
+            Organisation’s Name & Address   :<%= student.father.organisationsNameAndAddress %> <br>
+            Academic Qualification :  <%= student.father.academicQualification  %> <br>
+            Phone No. (office) :  <%= student.father.PhoneNo  %>  Residence :  <%= student.father.PhoneNo %> <br>
+            6. Mother’s Name :  <%= student.mother.name %> <br>
+            Occupation :  <%= student.mother.Occupation  %>    Designation :  <%= student.mother.Designation %>  Annual Income :  <%= student.mother.annualIncome %> <br>
+            Organisation’s Name & Address:  <%= student.mother.organisationsNameAndAddress %> <br>
+            Academic Qualification :   <%= student.mother.academicQualification  %> <br>
+            Phone No. (office) :   <%= student.mother.PhoneNo  %> Residence :  <%= student.mother.PhoneNo  %> <br>
+            8. (A) Home Town :  <%= student.address1.town %>   State  :  <%= student.address1.state %>  Country:  <%= student.address1.Country %> <br>
+            (B) Address : (Permanent)   <%= student.address2.permanent %> <br>
+            Address : (Present)    <%= student.address2.present %>  <br>
+            9. Details of any brother of sister studying in DPS <br>
+            Name of the Child :  <%= student.sibling.one.name %>   Admn. NO. :  <%= student.sibling.one.admsnNo %>   Class / Sec :  <%= student.sibling.one.class %> <br>
+            Name of the Child :  <%= student.sibling.two.name %>  Admn. NO. :  <%= student.sibling.two.admsnNo %>   Class / Sec :  <%= student.sibling.two.class %> <br>
+            Any other Information <br>
+            Staff Child (Mention the name of the parent(s) working at DPS)  <br>
+            :  <%= student.Any_other_info %> <br>
+            DOCUMENTS REQUIRED : <br>
+            1. At the time of admission, an attested copy of Municipal Birth Certicate or a Certicate from the School last attended. <br>
+            2. Four Passport size Photographs of Student & two photos each of Father, Mother & Guardian will be submitted for school
+            records. <br>
+            3. Transfer Certificate in original from the last school. <br>
+                a) Name of previous school :<%= student.prev_school %> <br>
+                b) Class in which he / she was studying in the last school :  <%= student.prev_class %> <br>
+                c) Position obtained in the last examination in the previous school :  <%= student.prev_result %> <br>
+                d) Medium of instruction in previous school (English / Hindi)  :  <%= student.prev_medium %> <br>
+                e) Proficiency in games / co-curricular / outstanding achievements (if any) :  <%= student.skills %> <br>
+                f) Certificate may be enclosed for proficiency in Games / Co-curricular / Outstanding Achievements (if any) <br>
+                g) Details of marks obtained in the last annual exam (in %) <br>
+               
+        </p>
+        <h2>DOCUMENTS</h2>
+        <img src="/files/forms/<%=student.email%>/<%= student.studentPic%>" alt="" style="height: 100px; width: auto;"><br>
+        <img src="/files/forms/<%=student.email%>/<%= student.fpic%>" alt="" style="height: 100px; width: auto;"><br>
+        <img src="/files/forms/<%=student.email%>/<%= student.mpic%>" alt="" style="height: 100px; width: auto;"><br>
+        
+    <%}else{%>
+        <p> <h3 style="padding-top: 3%;">General information of student</h3><br>
+            Full Name :<%=student.eleven.name%><br>
+            Mobile number :<%=student.eleven.mob%><br>
+            Date of birth :<%=student.eleven.dob%><br>
+            Category (SC/ST/OBC/GEN) :<%=student.eleven.category%><br>
+            <h3 style="padding-top: 3%;">details of previous study</h3><br>
+            Year of appearing board exam :<%=student.eleven.yop%> <br>
+            School name:<%=student.eleven.school%><br>
+            Name of board(ICSE/CBSE/OTHER) :<%=student.eleven.nob%><br>
+            Marks secured in half yearly class X exam :(i) Aggregate(in %) :<%=student.eleven.agg%><br>
+            (ii) Maths (in % if science student) :<%=student.eleven.maths%><br>
+            (ii) Science(in % if science student):<%=student.eleven.science%><br>
+            (iii)English(in % if commerce student) :<%=student.eleven.ceng%><br>
+             
+            (iii)Maths(in % if commerce student) :<%=student.eleven.cmaths%><br>
+            <h3 style="padding-top: 3%;">Stream applying for</h3><br>
+            stream(science / commerce) :<%=student.eleven.commerce%><br>
+            <h3>write 6 of the subjects offered</h3><br>
+             for science 1. :<%=student.eleven.one%><br>
+            2. :<%=student.eleven.two%><br>
+            3. :<%=student.eleven.three%><br>
+            4. :<%=student.eleven.four%><br>
+            5. :<%=student.eleven.five%><br>
+            1. :<%=student.eleven.six%><br>
+             for commerce 1. :<%=student.eleven.cone%><br>
+            2. :<%=student.eleven.ctwo%><br>
+            3. :<%=student.eleven.cthree%><br>
+            4. :<%=student.eleven.cfour%><br>
+            5. :<%=student.eleven.cfive%><br>
+            6. :<%=student.eleven.csix%><br>
+            <h3 style="padding-top: 3%;">parents/ guardain information</h3><br>
+            Father's name:<%=student.eleven.father%><br>
+            Mother's name :<%=student.eleven.mother%><br>
+            email :<%=student.eleven.email%><br>
+            Occupation:<%=student.eleven.Occupation%><br>
+            Phone number:<%=student.eleven.phno%><br>
+            RESIDENTIAL ADDRESS:  <%=student.eleven.adress%><br></p>
+            <h2>DOCUMENTS</h2>
+            <img src="/files/forms/<%=student.email%>/<%= student.eleven.pic%>" alt="" style="height: 100px; width: auto;"><br>
+            <img src="/files/forms/<%=student.email%>/<%= student.eleven.fpic%>" alt="" style="height: 100px; width: auto;"><br>
+          
+    <%}%>
+    <% if(User.approved!=true){%>
+    <button class="btn_trans_green" > <a href="/form/approve/<%= student.id%>">Approve Form </a></button>
+    <button class="btn_trans_green" > <a href="/form/reject/<%= student.id%>">Reject Form</a></button>
+    <% } else{ %>
+    <p style="padding: 1% 1%;width: fit-content; margin-top: 2%; color: #fff;background-color: #145A32;" >Form Approved</p>
+    <button class="btn_trans_green" > <a href="/admissionPdf/<%= student.id%>">Pdf</a></button>
+    <%}%>
+    <button class="btn_trans_green" > <a href="/form/delete/<%= student.id%>">Delete Form</a></button>
+</div>

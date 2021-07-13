@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Pakur</title>
+    <link rel="icon" href="/img/logo.jpeg" type="image/gif" sizes="16x16">
+    <link rel="stylesheet"  href="/css/grid.css">
+    <link rel="stylesheet"  href="/css/normalize.css">
+    <link rel="stylesheet"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="welcome_page">
+        <div class="upper">
+            <div class="row">
+                <div class="col span-1-of-3 one">
+                    <a href="mailto:dpspakur@gmail.com"><i class="fas fa-envelope"></i>dpspakur@gmail.com</a>
+                    <a href="http://"><i class="far fa-calendar-alt"></i>Academic Calender</a>
+                </div>
+                <div class="col span-1-of-3 two">
+                    <a href="http://">CBSE Affiliation No : 3430354</a>
+                     
+                </div>
+                <div class="col span-1-of-3 three">
+                    <a href="https://goo.gl/maps/tLsnnrfuwP8YfApC8"><i class="fas fa-map-marker-alt"></i>Police line, Pakur</a>
+                    <a href="http://"><i class="fas fa-phone"></i>8051256958</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <div class="row">
+                <div class="col span-1-of-3 logo_left">
+                    <img src="img/logo.jpeg" alt="">
+                </div>
+                <div class="col span-2-of-3 logo_right">
+                    <div class="logo_upper">
+                        DELHI PUBLIC SCHOOL, PAKUR
+                    </div>
+                    <div class="logo_lower">
+                        Police line, Pakur, Jharkhand
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cover">
+            <div class="navbar" id="myTopnav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li class="head_navbar_li_item" ><a class="nav_btn">Academics</a>
+                    <ul class="drop_1">
+                        <li><a href="/curriculum">Curriculum</a></li>
+                        <li><a href="/syllabus">Syllabus</a></li>
+                        <li><a href="/notice">Notices</a></li>
+                    </ul></li>
+                    <li class="head_navbar_li_item" ><a  class="nav_btn">Admission</a>
+                            <ul class="drop_2">
+                                <li><a href="/auth/register">ApplyOnline</a></li>
+                                <li><a href="/fees">FeeDetails</a></li>
+                                <li><a href="/procedure">Procedure</a></li>
+                            </ul></li>
+                    <li class="head_navbar_li_item" ><a  href="">About Us</a>
+                        <ul class="drop_3">
+                            <li><a href="/certificates">Recognitions</a></li>
+                            <li><a href="">Classrooms</a></li></ul></li>
+                    <li class="head_navbar_li_item" ><a class="nav_btn">Facilties</a>
+                        <ul class="drop_4">
+                            <li><a href="">Transportation</a></li>
+                            <li><a href="/playgrounds">Playgrounds</a></li>
+                            <li><a href="">Library</a></li>
+                        </ul></li>
+                    <li class="head_navbar_li_item" ><a href="/gallery">Gallery</a></li>
+                    <li class="head_navbar_li_item" ><a href="/contact">Contact Us</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+            </div>
+            <div class="cover_middle_text">
+                <h3>Welcome to DPS, <br>Pakur</h3>
+            </div>
+            <div class="cover_btn">
+                <a class="btn btn_trans cover_btn_one" href="/auth/register">Online Admission</a>
+                <a class="btn btn_solid cover_btn_two" href="/payment">Pay Your Fees</a>
+            </div>
+        </div>
+    </div>
+    <div class="directors_message">
+        <div class="heading">
+            <h1> <span>DIRECTOR'S</span> MESSAGE</h1>
+            <p><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i></p>
+        </div>
+        <div class="dm_content">
+            <div class="row">
+                <div class="col span-1-of-2 dm_pic">
+                    <img src="img/banner-3-modifyed.jpg" alt="">
+                    <p>Mr Arunendra Kumar <br>
+                        (director)</p>
+                </div>
+                <div class="col span-1-of-2 dm_message">
+                    <h2><%= msg.director.heading%></h2>
+     
+                    <p><%= msg.director.body%></p>
+                    <a class="btn btn_trans_green  " href="/director_message">read more</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="directors_message">
+            <div class="heading">
+                <h1> <span>PRINCIPAL'S</span> MESSAGE</h1>
+                <p><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i></p>
+            </div>
+            <div class="dm_content">
+                <div class="row">
+                    <div class="col span-1-of-2 dm_message">
+                        <h2><%= msg.principal.heading%></h2>
+     
+                        <p><%= msg.principal.body%></p>
+                        <a class="btn btn_trans_green  " href="/principal_message">read more</a>
+                    </div>
+                    <div class="col span-1-of-2 dm_pic">
+                        <img src="img/slider5.jpg" alt="">
+                        <p>Dr Bibhudatta Mohanty <br>
+                            (Principal)</p>
+                    </div>
+                   
+    
+                </div>
+            </div>
+        <div class="notice">
+            <div class="heading">
+                <h1> <span>Notice</span> Board</h1>
+                <p><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i></p>
+            </div>
+            <div class="notice_content">
+                <div class="notice_box">
+                    <ul>
+                        <li><i class="fas fa-arrow-alt-circle-right"></i><a href="/files/certificates/MANDATORY  DISCLOSURE 2021.pdf" download>Mandatory Public disClosure</a></li>
+                        <% if(notices.length >5){ %>
+                        <% for(let i=5;i>=0;i--){ %>
+                        <li><i class="fas fa-arrow-alt-circle-right"></i><a href="/notice/<%=notices[i].title%>"><%= notices[i].name %></a></li>
+                        <% }; }else{%>
+                            <% for(let i=(notices.length-1);i>=0;i--){ %>
+                                <li><i class="fas fa-arrow-alt-circle-right"></i><a href="/notice/<%=notices[i].title%>"><%= notices[i].name %></a></li>
+                                <% }; } %>
+                    </ul>
+                    <a class="btn btn_trans cover_btn_one" href="/notice"> See All</a>
+                </div>
+            </div>
+        </div>
+        <div class="photo_gallery">
+            <div class="heading">
+                <h1> <span>Photo</span> Gallery</h1>
+                <p><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i></p>
+            </div>
+            <div class="photo_gallery_content">
+                <p>We promise to deliver quality in all aspects. Capture them and kep them.</p>
+                <div class="imgs row">
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/WhatsApp-Image-2018-01-08-at-12.49.21-PM.jpeg" alt=""></a>    
+                        </div>
+                        
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g2.png" alt=""></a>
+                        </div>
+                        
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g3.png" alt=""></a>
+                        </div>
+                       
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g4.png" alt=""></a>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="imgs row">
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g5.png" alt=""></a>
+                        </div>
+                        
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g6.png" alt=""></a>
+                        </div>
+                        
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/g7.png" alt=""></a>
+                        </div>
+                        
+                    </div>
+                    <div class="col span-1-of-4 ">
+                        <div class="photo">
+                            <a href="/gallery"><img src="img/WhatsApp-Image-2018-01-08-at-12.49.21-PM.jpeg" alt=""></a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a class="btn btn_trans_green  " href="/gallery">Discover More</a>
+            </div>
+        </div>
+        <div class="facilities">
+            <div class="heading">
+                <h1> <span>School </span>Facilities</h1>
+                <p><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-minus"></i></p>
+            </div>
+            <div class="fac_content">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <a href="">
+                            <img src="img/facilities_img.jpg" alt="">
+                           <h3>Transportation</h3>
+                            <p>Students can avail the school transport subject to the availability of seats...</p>
+                            <h4>view details</h4>
+                        </a>
+                        
+
+                    </div>
+                    <div class="col span-1-of-3">
+                        <a href="">
+                            <img src="img/career_faci.jpg" alt="">
+                            <h3>Career Counsiling</h3>
+                            <p>The role of the school counsellor is delicate and precise. Students can come to them..</p>
+                            <h4>view details</h4>
+                        </a>
+                        
+
+                    </div>
+                
+                    <div class="col span-1-of-3">
+                        <a href="/playgrounds">
+                            <img src="img/facilities_img.jpg" alt="">
+                            <h3>Play Ground</h3>
+                            <p>The large spacious playground to play any type of sports....</p>
+                            <h4>view details</h4>
+                        </a>
+                         
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="belt">
+            <div class="row">
+                <div class="belt_one">
+                    <h2>Students</h2>
+                    <h3>1000+</h3>
+                </div>
+                <div class="belt_one belt_mid">
+                    <h2>Facullties</h2>
+                    <h3>100+</h3>
+                </div>
+                <div class="belt_one">
+                    <h2>Staffs</h2>
+                    <h3>25+</h3>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="col span-1-of-3 footer_col">
+                    <img src="img/logo.jpeg" alt="">
+                    <h3>DELHI PUBLIC SCHOOL</h3>
+                    <p>Pakur,Jharkhand</p>
+                    <a href="http://"><i class="fas fa-envelope"></i>info@dps.in</a><br>
+                    <a href="http://"><i class="fas fa-phone"></i>808452784</a>
+
+                </div>
+                <div class="col span-1-of-3 footer_col">
+                    <h3>Quick links</h3>
+                    <ul>
+                        <li><a href="">Admission</a></li>
+                        <li><a href="">Facullties</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Achievements</a></li>
+                    </ul>
+
+                </div>
+                <div class="col span-1-of-3 footer_colu">
+                    <h3>Social links</h3>
+                    <a href=""><i class="fab fa-facebook"></i></a><br>
+                    <a href=""><i class="fab fa-twitter-square"></i></a><br>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="credits">
+            <p>Copyright © 2020 Indian Institute of Technology Delhi. All Rights Reserved. Developed and maintained by d&d</p>
+        </div>
+        
+            
+    </div>
+    <script src="/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</body>
+</html>
