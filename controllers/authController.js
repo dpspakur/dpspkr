@@ -66,7 +66,7 @@ exports.registerHandle = (req, res) => {
                     service: 'gmail',
                     auth: {
                         user: "dpspakurweb@gmail.com",
-                        pass: "Dps@887711",
+                        pass: "887711@dps",
                     },
                 });
 
@@ -207,7 +207,7 @@ exports.forgotPassword = (req, res) => {
                             service: 'gmail',
                             auth: {
                                 user: "dpspakurweb@gmail.com",
-                                pass: "Dps@87711",
+                                pass: "887711@dps",
                             },
                         });
 
